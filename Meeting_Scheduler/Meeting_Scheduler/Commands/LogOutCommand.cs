@@ -1,22 +1,20 @@
-﻿using Meeting_Scheduler.Database.Entities;
-using Meeting_Scheduler.Database.Repositories;
-using Meeting_Scheduler.Services;
+﻿using Meeting_Scheduler.Services;
 using Meeting_Scheduler.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Navigation;
 
 namespace Meeting_Scheduler.Commands
 {
-    public class LogOutCommand:CommandBase
+    public class LogoutCommand:CommandBase
     {
-        
-        private readonly NavigationService navigationService;
-        
-        public LogOutCommand(NavigationService ns)
+
+        private readonly NavigationUtility navigationService;
+
+        public LogoutCommand(NavigationUtility ns)
         {
 
             this.navigationService = ns;
@@ -26,15 +24,14 @@ namespace Meeting_Scheduler.Commands
 
         public override void Execute(object parameter)
         {
-            
-                navigationService.CreateViewModel(() => { return new LoginViewModel(navigationService); });
-                navigationService.Navigate();
+
+            navigationService.CreateViewModel(() => { return new LoginViewModel(navigationService); });
+            navigationService.Navigate();
 
         }
 
         public override bool CanExecute(object parameter)
         {
-
             return base.CanExecute(parameter);
         }
 

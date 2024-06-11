@@ -12,11 +12,11 @@ namespace Meeting_Scheduler.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-        protected void OnPropertyChange(string propertyName) 
+        protected void OnPropertyChange(string propertyName)
         {
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        
+
         }
 
 

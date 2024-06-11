@@ -23,29 +23,33 @@
                 </Grid.RowDefinitions>
 
                 <Button 
-             Margin="40 10 40 10"
-             Grid.Column="2"
-             Content="Back"
-             
-             />
+         Margin="40 10 40 10"
+         Grid.Column="2"
+         Content="Back"
+         Command="{Binding BackCommand}" 
+         />
 
                 <Label Visibility="Hidden"
-                       Content="{Binding Id}"/>
+                   Content="{Binding Id}"/>
 
-           <Label
-             Grid.Column="1"
-             FontSize="20"
-             FontWeight="Bold"
-             HorizontalAlignment="Center"
-             Content="Change user"/>
+                <Label
+         Grid.Column="1"
+         FontSize="20"
+         FontWeight="Bold"
+         HorizontalAlignment="Center"
+         Content="Change user"/>
 
                 <StackPanel Grid.Row="1"
-             Grid.Column="1" Margin="30 0 30 0">
+         Grid.Column="1" Margin="30 0 30 0">
                     <Label Content="User Name:"/>
                     <TextBox Text="{Binding Username}" Margin="0,5,0,10"/>
 
                     <Label Content="Password:"/>
-                    <TextBox Text="{Binding Password}" Margin="0,5,0,10"/>
+
+                    <PasswordBox
+                     Margin="0,5,0,10"
+                     x:Name="PswdBox"
+                     PasswordChanged="MyPasswordBox_PasswordChanged"/>
 
                     <Label Content="Name:"/>
                     <TextBox Text="{Binding Name}" Margin="0,5,0,10"/>

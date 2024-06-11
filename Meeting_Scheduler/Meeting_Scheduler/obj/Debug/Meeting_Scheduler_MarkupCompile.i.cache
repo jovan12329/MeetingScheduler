@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\
 Meeting_Scheduler
 none
 false
 DEBUG;TRACE
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\App.xaml
-7823421541
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\App.xaml
+142109716554
 
-36-1846370984
-18-1983093832
-MainWindow.xaml;Views\AddUserView.xaml;Views\ChangeUserView.xaml;Views\EmployeeView.xaml;Views\LogInView.xaml;Views\UpdateProfileView.xaml;Views\UsersView.xaml;
+851418161593
+171899241738
+MainWindow.xaml;Views\AbsenceView.xaml;Views\AddUserView.xaml;Views\AdminView.xaml;Views\AppointmentView.xaml;Views\ApproveAbsenceView.xaml;Views\ApproveSeekView.xaml;Views\ChangeUserView.xaml;Views\EditAppointmentView.xaml;Views\EmployeeView.xaml;Views\EventView.xaml;Views\LoginView.xaml;Views\SeekingLeaveView.xaml;Views\UpdateUserView.xaml;
 
-True
+False
 

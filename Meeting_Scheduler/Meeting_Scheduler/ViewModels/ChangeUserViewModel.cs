@@ -1,5 +1,5 @@
 ﻿using Meeting_Scheduler.Commands;
-using Meeting_Scheduler.Models;
+using Meeting_Scheduler.Database.Entities;
 using Meeting_Scheduler.Services;
 using System;
 using System.Collections.Generic;
@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace Meeting_Scheduler.ViewModels
 {
-    public class ChangeUserViewModel:ViewModelBase
+    public class ChangeUserViewModel : ViewModelBase
     {
 
         private User _u;
-        private readonly NavigationService _navigationService;
+        private readonly NavigationUtility _navigationService;
+        private string admin;
 
         private string _id;
         private string _username;
@@ -25,27 +27,30 @@ namespace Meeting_Scheduler.ViewModels
         private string _phone;
 
 
-        public string Id { 
-            
-            get {
+        public string Id
+        {
 
-                return _u.Id.ToString();
-            
-            } 
-            
-            set {
+            get
+            {
+
+                return _id;
+
+            }
+
+            set
+            {
 
                 _id = value;
                 OnPropertyChange(nameof(Id));
             }
-        
+
         }
 
         public string Username
         {
             get
             {
-                return _u.UserName;
+                return _username;
             }
 
             set
@@ -62,7 +67,7 @@ namespace Meeting_Scheduler.ViewModels
         {
             get
             {
-                return _u.Password;
+                return _password;
             }
 
             set
@@ -80,7 +85,7 @@ namespace Meeting_Scheduler.ViewModels
         {
             get
             {
-                return _u.Name;
+                return _name;
             }
 
             set
@@ -98,7 +103,7 @@ namespace Meeting_Scheduler.ViewModels
         {
             get
             {
-                return _u.Surname;
+                return _surname;
             }
 
             set
@@ -115,7 +120,7 @@ namespace Meeting_Scheduler.ViewModels
         {
             get
             {
-                return _u.Email;
+                return _email;
             }
 
             set
@@ -132,7 +137,7 @@ namespace Meeting_Scheduler.ViewModels
         {
             get
             {
-                return _u.Phone;
+                return _phone;
             }
 
             set
@@ -148,13 +153,26 @@ namespace Meeting_Scheduler.ViewModels
 
 
         public ICommand SaveCommand { get; }
-        
 
-        public ChangeUserViewModel(NavigationService ns, User u)
+
+        public ICommand BackCommand { get; }
+
+
+        public ChangeUserViewModel(NavigationUtility ns, User u, string admin)
         {
             _navigationService = ns;
             _u = u;
-            SaveCommand = new ChangeUserCommand(this,_navigationService);
+            this.admin = admin;
+            this._id = u.RowKey.ToString();
+            this._username = u.UserName;
+            this._name = u.Name;
+            this._surname = u.Surname;
+            this._email = u.Email;
+            this._phone = u.Phone;
+
+            SaveCommand = new ChangeUserCommand(this, _navigationService,this.admin);
+            this._navigationService.CreateViewModel(() => { return new AdminViewModel(this._navigationService,this.admin); });
+            BackCommand = new NavigationCommand(this._navigationService);
             
         }
 

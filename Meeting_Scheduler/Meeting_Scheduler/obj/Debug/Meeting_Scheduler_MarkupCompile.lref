@@ -1,10 +1,17 @@
 ﻿
 
-FC:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\MainWindow.xaml;;
-FC:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\Views\LogInView.xaml;;
-FC:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\Views\UsersView.xaml;;
-FC:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\Views\EmployeeView.xaml;;
-FC:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\Views\ChangeUserView.xaml;;
-FC:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\Views\AddUserView.xaml;;
-FC:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\Views\UpdateProfileView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\MainWindow.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\LoginView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\AddUserView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\AdminView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\ChangeUserView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\AppointmentView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\EmployeeView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\UpdateUserView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\SeekingLeaveView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\AbsenceView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\EditAppointmentView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\ApproveSeekView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\ApproveAbsenceView.xaml;;
+FC:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\Views\EventView.xaml;;
 

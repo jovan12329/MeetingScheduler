@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Meeting_Scheduler.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,23 @@ using System.Windows.Shapes;
 namespace Meeting_Scheduler.Views
 {
     /// <summary>
-    /// Interaction logic for LogInView.xaml
+    /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class LogInView : UserControl
+    public partial class LoginView : UserControl
     {
-        public LogInView()
+        public LoginView()
         {
             InitializeComponent();
         }
+
+        private void MyPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext != null)
+            {
+                ((LoginViewModel)DataContext).Password = PswdBox.Password;
+            }
+        }
+
+
     }
 }

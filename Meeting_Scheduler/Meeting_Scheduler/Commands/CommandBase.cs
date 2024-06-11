@@ -11,20 +11,20 @@ namespace Meeting_Scheduler.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        public virtual bool CanExecute(object parameter) 
+        public virtual bool CanExecute(object parameter)
         {
             return true;
         }
 
-        protected void OnCanExecutedChanged() 
+        protected void OnCanExecutedChanged()
         {
-            
+
             CanExecuteChanged?.Invoke(this, new EventArgs());
-        
+
         }
 
 
         public abstract void Execute(object parameter);
-        
+
     }
 }

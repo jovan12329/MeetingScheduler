@@ -5,18 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Meeting_Scheduler"
         mc:Ignorable="d"
-        xmlns:views="clr-namespace:Meeting_Scheduler.Views"
-        xmlns:vms="clr-namespace:Meeting_Scheduler.ViewModels"
-        Title="Meeting Scheduler" Height="500" Width="800"
-        ResizeMode="NoResize">
+       xmlns:views="clr-namespace:Meeting_Scheduler.Views"
+       xmlns:vms="clr-namespace:Meeting_Scheduler.ViewModels"
+       Title="Meeting Scheduler" Height="500" Width="800"
+       ResizeMode="NoResize">
+
+
     <Grid>
         <Grid.Resources>
             <DataTemplate DataType="{x:Type vms:LoginViewModel}">
-                <views:LogInView/>
+                <views:LoginView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type vms:UsersViewModel}">
-                <views:UsersView/>
+            <DataTemplate DataType="{x:Type vms:AdminViewModel}">
+                <views:AdminView/>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type vms:AddUserViewModel}">
@@ -27,6 +29,43 @@
                 <views:ChangeUserView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type vms:AppointmentViewModel}">
+                <views:AppointmentView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:EmployeeViewModel}">
+                <views:EmployeeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:UpdateUserViewModel}">
+                <views:UpdateUserView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:SeekingLeaveViewModel}">
+                <views:SeekingLeaveView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:AbsenceViewModel}">
+                <views:AbsenceView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:EditAppointmentViewModel}">
+                <views:EditAppointmentView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:ApproveSeekViewModel}">
+                <views:ApproveSeekView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:ApproveAbsenceViewModel}">
+                <views:ApproveAbsenceView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:EventViewModel}">
+                <views:EventView/>
+            </DataTemplate>
+
+
         </Grid.Resources>
 
 
@@ -34,4 +73,8 @@
 
 
     </Grid>
+
+
+
+
 </Window>

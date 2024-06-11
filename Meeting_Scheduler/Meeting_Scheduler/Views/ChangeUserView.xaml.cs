@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Meeting_Scheduler.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,16 @@ namespace Meeting_Scheduler.Views
         {
             InitializeComponent();
         }
+
+
+        private void MyPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext != null)
+            {
+                ((ChangeUserViewModel)DataContext).Password = PswdBox.Password;
+            }
+        }
+
+
     }
 }

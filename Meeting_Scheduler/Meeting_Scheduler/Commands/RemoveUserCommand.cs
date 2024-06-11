@@ -7,29 +7,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Navigation;
 
 namespace Meeting_Scheduler.Commands
 {
-    public class RemoveUserCommand:CommandBase
+    public class RemoveUserCommand : CommandBase
     {
 
 
-        private readonly NavigationService navigationService;
+        private readonly NavigationUtility navigationService;
         private UserViewModel viewModel;
-        private readonly UserRepository userRepository=new UserRepository();
-        public RemoveUserCommand(UserViewModel vm,NavigationService ns)
+        private readonly UserRepository userRepository = new UserRepository();
+        private string admin;
+        public RemoveUserCommand(UserViewModel vm, NavigationUtility ns,string a)
         {
             this.viewModel = vm;
             this.navigationService = ns;
+            this.admin = a;
 
 
         }
 
         public override void Execute(object parameter)
         {
-            UserDTO rem = userRepository.GetEmployeeById(viewModel.Id.ToString());
+            User rem = userRepository.GetEmployeeById(viewModel.Id.ToString());
             userRepository.RemoveUser(rem);
-            navigationService.CreateViewModel(() => { return new UsersViewModel(navigationService); });
+            navigationService.CreateViewModel(() => { return new AdminViewModel(navigationService,this.admin); });
             navigationService.Navigate();
 
         }

@@ -1,38 +1,50 @@
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Meeting_Scheduler.exe.config
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Meeting_Scheduler.exe
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Meeting_Scheduler.pdb
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.WindowsAzure.Storage.dll
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.WindowsAzure.Configuration.xml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.WindowsAzure.Storage.xml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.csproj.AssemblyReference.cache
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\MainWindow.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\LogInView.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\UsersView.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\App.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler_MarkupCompile.cache
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler_MarkupCompile.lref
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\MainWindow.baml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\LogInView.baml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\UsersView.baml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.g.resources
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.Properties.Resources.resources
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.csproj.GenerateResource.cache
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.csproj.CoreCompileInputs.cache
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_.8D759631.Up2Date
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.exe
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.pdb
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EmployeeView.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EmployeeView.baml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ChangeUserView.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ChangeUserView.baml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AddUserView.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AddUserView.baml
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\UpdateProfileView.g.cs
-C:\Users\Jovan\Desktop\Schneider Praksa\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\UpdateProfileView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.csproj.AssemblyReference.cache
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\MainWindow.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\LoginView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\App.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler_MarkupCompile.cache
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler_MarkupCompile.lref
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Meeting_Scheduler.exe.config
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Meeting_Scheduler.exe
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Meeting_Scheduler.pdb
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\MainWindow.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\LoginView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.g.resources
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.Properties.Resources.resources
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.csproj.GenerateResource.cache
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.csproj.CoreCompileInputs.cache
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.exe
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_Scheduler.pdb
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Meeting_.8D759631.Up2Date
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AddUserView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AdminView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AddUserView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AdminView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ChangeUserView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ChangeUserView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AppointmentView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AppointmentView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EmployeeView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\UpdateUserView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EmployeeView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\UpdateUserView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\SeekingLeaveView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\SeekingLeaveView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AbsenceView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AbsenceView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EditAppointmentView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EditAppointmentView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ApproveSeekView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ApproveSeekView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ApproveAbsenceView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ApproveAbsenceView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EventView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EventView.baml

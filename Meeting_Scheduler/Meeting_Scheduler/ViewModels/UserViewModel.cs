@@ -1,5 +1,5 @@
 ﻿using Meeting_Scheduler.Commands;
-using Meeting_Scheduler.Models;
+using Meeting_Scheduler.Database.Entities;
 using Meeting_Scheduler.Services;
 using System;
 using System.Collections.Generic;
@@ -7,15 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace Meeting_Scheduler.ViewModels
 {
-    public class UserViewModel:ViewModelBase
+    public class UserViewModel : ViewModelBase
     {
         private User _u;
-        private readonly NavigationService _navigationService; 
-        
-        public Guid Id =>_u.Id;
+        private readonly NavigationUtility _navigationService;
+
+        public string Admin { get; set; }
+        public string Id => _u.RowKey;
         public string Name => _u.Name;
         public string Surname => _u.Surname;
 
@@ -26,12 +28,13 @@ namespace Meeting_Scheduler.ViewModels
 
         public ICommand RemoveUser { get; set; }
 
-        public UserViewModel(NavigationService ns,User u)
+        public UserViewModel(NavigationUtility ns, User u,string admin)
         {
             _navigationService = ns;
             _u = u;
-            RemoveUser = new RemoveUserCommand(this,this._navigationService);
-            ChangeUser = new ChangeNavigateCommand(_navigationService,this);
+            Admin = admin;
+            RemoveUser = new RemoveUserCommand(this, this._navigationService,Admin);
+            ChangeUser = new ChangeNavigateCommand(_navigationService, this,Admin);
         }
 
     }

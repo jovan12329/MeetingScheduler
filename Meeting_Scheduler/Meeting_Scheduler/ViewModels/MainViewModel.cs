@@ -9,6 +9,7 @@ namespace Meeting_Scheduler.ViewModels
 {
     public class MainViewModel:ViewModelBase
     {
+
         private readonly NavigationStore _navigationStore;
 
         public MainViewModel(NavigationStore navigationStore)
@@ -24,7 +25,7 @@ namespace Meeting_Scheduler.ViewModels
 
         public ViewModelBase CurrentViewModel => _navigationStore.CurretViewModel;
 
-        
+
 
     }
 }

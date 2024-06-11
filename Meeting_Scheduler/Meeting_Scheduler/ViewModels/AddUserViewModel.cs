@@ -6,15 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace Meeting_Scheduler.ViewModels
 {
-    public class AddUserViewModel:ViewModelBase
+    public class AddUserViewModel : ViewModelBase
     {
 
-        private NavigationService _navigtionService;
+        private NavigationUtility _navigtionService;
 
-
+        private string id;
         private string _username;
         private string _password;
         private string _name;
@@ -129,13 +130,15 @@ namespace Meeting_Scheduler.ViewModels
 
         public ICommand AddCommand { get; set; }
 
-        public ICommand LogOutFrom { get; set; }
+        public ICommand BackFrom { get; set; }
 
-        public AddUserViewModel(NavigationService navigationService)
+        public AddUserViewModel(NavigationUtility navigationService, string id)
         {
-            this._navigtionService= navigationService;
-            AddCommand = new AddUserCommand(this,this._navigtionService);
-            LogOutFrom = new LogOutCommand(this._navigtionService);
+            this.id = id;
+            this._navigtionService = navigationService;
+            AddCommand = new AddUserCommand(this, this._navigtionService, this.id);
+            this._navigtionService.CreateViewModel(() => { return new AdminViewModel(this._navigtionService, id); });
+            BackFrom = new NavigationCommand(this._navigtionService);
         }
 
 

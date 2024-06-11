@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meeting_Scheduler", "Meeting_Scheduler\Meeting_Scheduler.csproj", "{F3F78DBF-B2C4-435A-B39D-20445175961C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meeting_Scheduler", "Meeting_Scheduler\Meeting_Scheduler.csproj", "{ACAAC5A9-1DAC-4CAE-9990-490207F49C44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F3F78DBF-B2C4-435A-B39D-20445175961C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3F78DBF-B2C4-435A-B39D-20445175961C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3F78DBF-B2C4-435A-B39D-20445175961C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3F78DBF-B2C4-435A-B39D-20445175961C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAAC5A9-1DAC-4CAE-9990-490207F49C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAAC5A9-1DAC-4CAE-9990-490207F49C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAAC5A9-1DAC-4CAE-9990-490207F49C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAAC5A9-1DAC-4CAE-9990-490207F49C44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3017B216-9C55-40AA-80AE-CC41A160913C}
+		SolutionGuid = {D541D026-2C11-43F6-A385-685B77C4FE9C}
 	EndGlobalSection
 EndGlobal
