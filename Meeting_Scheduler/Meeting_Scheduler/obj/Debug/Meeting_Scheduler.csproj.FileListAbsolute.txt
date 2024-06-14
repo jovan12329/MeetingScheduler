@@ -48,3 +48,9 @@ C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\ob
 C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\ApproveAbsenceView.baml
 C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EventView.g.cs
 C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EventView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\log4net.dll
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\bin\Debug\log4net.xml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AdminCalendarView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EmployeeCalendarView.g.cs
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\AdminCalendarView.baml
+C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\obj\Debug\Views\EmployeeCalendarView.baml

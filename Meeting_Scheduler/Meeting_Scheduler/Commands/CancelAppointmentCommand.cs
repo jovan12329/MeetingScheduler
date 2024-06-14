@@ -1,4 +1,5 @@
-﻿using Meeting_Scheduler.Database.Entities;
+﻿using Meeting_Scheduler.Common;
+using Meeting_Scheduler.Database.Entities;
 using Meeting_Scheduler.Database.Repositories;
 using Meeting_Scheduler.Services;
 using Meeting_Scheduler.ViewModels;
@@ -18,6 +19,7 @@ namespace Meeting_Scheduler.Commands
         private readonly UserRepository userRepository = new UserRepository();
         private readonly AppointmentRepository pointRepository = new AppointmentRepository();
         private string admin;
+        private ILogger logger = new FileLogger(typeof(CancelAppointmentCommand));
         public CancelAppointmentCommand(AppointmentItemViewModel vm, NavigationUtility ns, string a)
         {
             this.viewModel = vm;
@@ -31,9 +33,9 @@ namespace Meeting_Scheduler.Commands
         {
             List<Appointment> cen = pointRepository.AppointmentsByDateStartFinish(viewModel._a.StartTime.ToLocalTime(), viewModel._a.EndTime.ToLocalTime());
 
-            cen.ForEach(c => { pointRepository.CancelAppointment(c); });
+            cen.ForEach(c => { logger.Log("Appointment cancelled!",System.Diagnostics.EventLogEntryType.Information); pointRepository.CancelAppointment(c); });
 
-            
+            logger.Log("Navigating to the employee view!",System.Diagnostics.EventLogEntryType.Information);
             navigationService.CreateViewModel(() => { return new EmployeeViewModel(navigationService, this.admin); });
             navigationService.Navigate();
 

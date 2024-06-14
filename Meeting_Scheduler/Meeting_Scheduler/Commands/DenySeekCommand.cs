@@ -1,4 +1,5 @@
-﻿using Meeting_Scheduler.Database.Repositories;
+﻿using Meeting_Scheduler.Common;
+using Meeting_Scheduler.Database.Repositories;
 using Meeting_Scheduler.Services;
 using Meeting_Scheduler.ViewModels;
 using System;
@@ -15,6 +16,7 @@ namespace Meeting_Scheduler.Commands
         private readonly NavigationUtility navigationService;
         private SeekingLeaveRepository repo = new SeekingLeaveRepository();
         private string user;
+        private ILogger logger = new EventViewLogger();
         public DenySeekCommand(SeekingItemViewModel loginViewModel, NavigationUtility ns, string user)
         {
 
@@ -30,6 +32,10 @@ namespace Meeting_Scheduler.Commands
 
             var s = repo.GetById(addViewModel.Id);
             repo.RemoveSeek(s);
+
+            logger.Log("Seek successfully denied !", System.Diagnostics.EventLogEntryType.Information);
+
+            logger.Log("Navigating to the approve seek view!", System.Diagnostics.EventLogEntryType.Information);
 
             this.navigationService.CreateViewModel(() => { return new ApproveSeekViewModel(this.navigationService, user); });
             navigationService.Navigate();

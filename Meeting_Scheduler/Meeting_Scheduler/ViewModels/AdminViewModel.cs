@@ -42,6 +42,8 @@ namespace Meeting_Scheduler.ViewModels
 
             ReportAdmin = new ReportAdminCommand();
 
+            AdminCalendarNav = new AdminCalendarNavCommand(this._navigationService, this.adminId);
+
         }
 
 
@@ -57,6 +59,7 @@ namespace Meeting_Scheduler.ViewModels
         public ICommand ApproveAbsNav { get; set; }
         public ICommand EventNav { get; set; }
         public ICommand ReportAdmin { get; set; }
+        public ICommand AdminCalendarNav { get; set; }
         public string AdminId => adminId;
 
 

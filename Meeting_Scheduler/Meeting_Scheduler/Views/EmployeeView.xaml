@@ -35,6 +35,13 @@
 
                 </Grid.ColumnDefinitions>
 
+                <Button
+                    Grid.Column="2"
+                    Margin="5,160,5,160"
+                    Content="Calendar"
+                    Command="{Binding EmployeeCalendarNav}"
+                    />
+
 
                 <ListView
         Margin="10"

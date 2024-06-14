@@ -1,4 +1,6 @@
-﻿using Meeting_Scheduler.Database.Entities;
+﻿using log4net.Core;
+using Meeting_Scheduler.Common;
+using Meeting_Scheduler.Database.Entities;
 using Meeting_Scheduler.Database.Repositories;
 using Meeting_Scheduler.Services;
 using Meeting_Scheduler.ViewModels;
@@ -19,6 +21,8 @@ namespace Meeting_Scheduler.Commands
         private NavigationUtility navigation;
         private AbsenceViewModel model;
         private AbsenceRepository repo = new AbsenceRepository();
+        private Common.ILogger logger = new FileLogger(typeof(RequestAbsenceCommand));
+
         public RequestAbsenceCommand(AbsenceViewModel loginViewModel, NavigationUtility ns)
         {
 
@@ -31,18 +35,18 @@ namespace Meeting_Scheduler.Commands
         public override void Execute(object parameter)
         {
 
-            if (string.IsNullOrEmpty(model.Reason)) { MessageBox.Show("Enter reason!"); return; }
-            if (string.IsNullOrEmpty(model.Type)) { MessageBox.Show("Choose type!"); return; }
-            if (string.IsNullOrEmpty(model.StartDate)) { MessageBox.Show("Enter start date!"); return; }
-            if (string.IsNullOrEmpty(model.EndDate)) { MessageBox.Show("Enter end date!"); return; }
-            if (string.IsNullOrEmpty(model.Description)) { MessageBox.Show("Enter description!"); return; }
+            if (string.IsNullOrEmpty(model.Reason)) { logger.Log("Empty field reason",System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Enter reason!"); return; }
+            if (string.IsNullOrEmpty(model.Type)) { logger.Log("Empty field type", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Choose type!"); return; }
+            if (string.IsNullOrEmpty(model.StartDate)) { logger.Log("Empty field start date", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Enter start date!"); return; }
+            if (string.IsNullOrEmpty(model.EndDate)) { logger.Log("Empty field end date", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Enter end date!"); return; }
+            if (string.IsNullOrEmpty(model.Description)) { logger.Log("Empty field description", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Enter description!"); return; }
 
 
             string pattern = @"^(\d{1,2})-(\bJanuary\b|\bFebruary\b|\bMarch\b|\bApril\b|\bMay\b|\bJune\b|\bJuly\b|\bAugust\b|\bSeptember\b|\bOctober\b|\bNovember\b|\bDecember\b)-(\d{4})$";
             Regex r = new Regex(pattern);
 
-            if (!r.IsMatch(model.StartDate)) { MessageBox.Show("Wrong date input for start date(d-MMMM-yyyy)!"); return; }
-            if (!r.IsMatch(model.EndDate)) { MessageBox.Show("Wrong date input for end date(d-MMMM-yyyy)!"); return; }
+            if (!r.IsMatch(model.StartDate)) { logger.Log("Wrong start date input !", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Wrong date input for start date(d-MMMM-yyyy)!"); return; }
+            if (!r.IsMatch(model.EndDate)) { logger.Log("Wrong end date input !", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Wrong date input for end date(d-MMMM-yyyy)!"); return; }
 
 
             string start = model.StartDate;
@@ -62,14 +66,18 @@ namespace Meeting_Scheduler.Commands
             DateTime reqSt = new DateTime(datumStart.Year, datumStart.Month, datumStart.Day, 0, 0, 0);
             DateTime reqEn = new DateTime(datumEnd.Year, datumEnd.Month, datumEnd.Day, 0, 0, 0);
 
-            if (reqSt >= reqEn) { MessageBox.Show("Start date can't be bigger or equal End date!"); return; }
+            if (reqSt >= reqEn) { logger.Log("Start date is bigger than end date!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Start date can't be bigger or equal End date!"); return; }
 
-            if (reqSt < DateTime.Now) { MessageBox.Show("You cannot request seeking leave in this date!"); return; }
+            if (reqSt < DateTime.Now) { logger.Log("Start date can't be less than current date !", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("You cannot request seeking leave in this date!"); return; }
 
 
             AbsenceRequest s = new AbsenceRequest(model.Id, model.Reason,model.Type, reqSt, reqEn, model.Description);
 
             repo.AddAbsence(s);
+
+            logger.Log("Absence added successfully !",System.Diagnostics.EventLogEntryType.Information);
+
+            logger.Log("Navigating to the employee view model !",System.Diagnostics.EventLogEntryType.Information);
 
 
             this.navigation.CreateViewModel(() => { return new EmployeeViewModel(this.navigation, model.Id); });

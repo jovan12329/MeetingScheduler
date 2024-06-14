@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.17.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.17\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
     </Reference>
@@ -47,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,10 +74,13 @@
     <Compile Include="Commands\AddEventCommand.cs" />
     <Compile Include="Commands\AddNavigateCommand.cs" />
     <Compile Include="Commands\AddUserCommand.cs" />
+    <Compile Include="Commands\AdminCalendarNavCommand.cs" />
     <Compile Include="Commands\AppointCommand.cs" />
     <Compile Include="Commands\ApproveAbsenceCommand.cs" />
     <Compile Include="Commands\ApproveSeekCommand.cs" />
     <Compile Include="Commands\ApproveSeekNavCommand.cs" />
+    <Compile Include="Commands\BackAdminCalendarCommand.cs" />
+    <Compile Include="Commands\BackEmployeeCalendarCommand.cs" />
     <Compile Include="Commands\CancelAppointmentCommand.cs" />
     <Compile Include="Commands\ChangeNavigateCommand.cs" />
     <Compile Include="Commands\ChangeUserCommand.cs" />
@@ -82,6 +89,7 @@
     <Compile Include="Commands\DenySeekCommand.cs" />
     <Compile Include="Commands\EditAppointmentCommand.cs" />
     <Compile Include="Commands\EditAppointmentNavigationCommand.cs" />
+    <Compile Include="Commands\EmployeeCalendarNavCommand.cs" />
     <Compile Include="Commands\EmployeeReportCommand.cs" />
     <Compile Include="Commands\EventNavigationCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
@@ -95,7 +103,10 @@
     <Compile Include="Commands\SeekingNavigationCommand.cs" />
     <Compile Include="Commands\UpdateUserCommand.cs" />
     <Compile Include="Commands\UpdateUserNavigationCommand.cs" />
+    <Compile Include="Common\EventViewLogger.cs" />
+    <Compile Include="Common\FileLogger.cs" />
     <Compile Include="Common\HashPassword.cs" />
+    <Compile Include="Common\ILogger.cs" />
     <Compile Include="Database\Entities\AbsenceRequest.cs" />
     <Compile Include="Database\Entities\Appointment.cs" />
     <Compile Include="Database\Entities\SeekingLeave.cs" />
@@ -115,6 +126,7 @@
     <Compile Include="ViewModels\AbsenceItemViewModel.cs" />
     <Compile Include="ViewModels\AbsenceViewModel.cs" />
     <Compile Include="ViewModels\AddUserViewModel.cs" />
+    <Compile Include="ViewModels\AdminCalendarViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\AppointmentItemViewModel.cs" />
     <Compile Include="ViewModels\AppointmentViewModel.cs" />
@@ -122,6 +134,7 @@
     <Compile Include="ViewModels\ApproveSeekViewModel.cs" />
     <Compile Include="ViewModels\ChangeUserViewModel.cs" />
     <Compile Include="ViewModels\EditAppointmentViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeCalendarViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -136,6 +149,9 @@
     </Compile>
     <Compile Include="Views\AddUserView.xaml.cs">
       <DependentUpon>AddUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminCalendarView.xaml.cs">
+      <DependentUpon>AdminCalendarView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
@@ -154,6 +170,9 @@
     </Compile>
     <Compile Include="Views\EditAppointmentView.xaml.cs">
       <DependentUpon>EditAppointmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeCalendarView.xaml.cs">
+      <DependentUpon>EmployeeCalendarView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EmployeeView.xaml.cs">
       <DependentUpon>EmployeeView.xaml</DependentUpon>
@@ -190,6 +209,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AdminCalendarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +234,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EditAppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmployeeCalendarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

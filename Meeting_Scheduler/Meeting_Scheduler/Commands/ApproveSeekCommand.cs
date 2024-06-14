@@ -1,4 +1,5 @@
-﻿using Meeting_Scheduler.Database.Repositories;
+﻿using Meeting_Scheduler.Common;
+using Meeting_Scheduler.Database.Repositories;
 using Meeting_Scheduler.Services;
 using Meeting_Scheduler.ViewModels;
 using System;
@@ -16,6 +17,7 @@ namespace Meeting_Scheduler.Commands
         private readonly NavigationUtility navigationService;
         private SeekingLeaveRepository repo = new SeekingLeaveRepository();
         private string user;
+        private ILogger logger = new EventViewLogger();
         public ApproveSeekCommand(SeekingItemViewModel loginViewModel, NavigationUtility ns, string user)
         {
 
@@ -32,8 +34,11 @@ namespace Meeting_Scheduler.Commands
             var s = repo.GetById(addViewModel.Id);
             s.Approved = true.ToString();
 
+            logger.Log("Seek approved!",System.Diagnostics.EventLogEntryType.Information);
+            
             repo.UpdateSeek(s);
 
+            logger.Log("Navigating to approve seek view!", System.Diagnostics.EventLogEntryType.Information);
             this.navigationService.CreateViewModel(() => { return new ApproveSeekViewModel(this.navigationService, user); });
             navigationService.Navigate();
 

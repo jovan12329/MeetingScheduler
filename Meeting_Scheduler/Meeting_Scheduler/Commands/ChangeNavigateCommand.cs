@@ -1,4 +1,5 @@
-﻿using Meeting_Scheduler.Database.Entities;
+﻿using Meeting_Scheduler.Common;
+using Meeting_Scheduler.Database.Entities;
 using Meeting_Scheduler.Database.Repositories;
 using Meeting_Scheduler.Services;
 using Meeting_Scheduler.ViewModels;
@@ -19,6 +20,7 @@ namespace Meeting_Scheduler.Commands
         private readonly UserViewModel viewModel;
         private readonly UserRepository userRepository = new UserRepository();
         private string admin;
+        private ILogger logger = new EventViewLogger();
         public ChangeNavigateCommand(NavigationUtility ns, UserViewModel vm,string admin)
         {
 
@@ -32,6 +34,7 @@ namespace Meeting_Scheduler.Commands
         public override void Execute(object parameter)
         {
             User u = userRepository.GetEmployeeById(viewModel.Id.ToString());
+            logger.Log("Navigating to the change user view!",System.Diagnostics.EventLogEntryType.Information);
             navigationService.CreateViewModel(() => { return new ChangeUserViewModel(navigationService, u,this.admin); });
             navigationService.Navigate();
 

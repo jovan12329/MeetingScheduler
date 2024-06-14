@@ -65,6 +65,14 @@
                 <views:EventView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type vms:AdminCalendarViewModel}">
+                <views:AdminCalendarView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:EmployeeCalendarViewModel}">
+                <views:EmployeeCalendarView/>
+            </DataTemplate>
+
 
         </Grid.Resources>
 

@@ -20,6 +20,7 @@ namespace Meeting_Scheduler.Commands
         private readonly UpdateUserViewModel addViewModel;
         private readonly NavigationUtility navigationService;
         private UserRepository repo = new UserRepository();
+        private ILogger logger = new FileLogger(typeof(UpdateUserCommand));
         public UpdateUserCommand(UpdateUserViewModel loginViewModel, NavigationUtility ns)
         {
 
@@ -32,11 +33,11 @@ namespace Meeting_Scheduler.Commands
         public override void Execute(object parameter)
         {
 
-            if (String.IsNullOrEmpty(addViewModel.Username)) { MessageBox.Show("Username is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Name)) { MessageBox.Show("Name is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Surname)) { MessageBox.Show("Surname is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Email)) { MessageBox.Show("Email is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Phone)) { MessageBox.Show("Phone is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Username)) { logger.Log("Username field empty!",System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Username is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Name)) { logger.Log("Name field empty!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Name is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Surname)) { logger.Log("Surname field empty!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Surname is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Email)) { logger.Log("Email field empty!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Email is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Phone)) { logger.Log("Phone field empty!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Phone is empty!"); return; }
 
 
             User u1 = repo.GetEmployeeById(addViewModel.Id);
@@ -45,9 +46,9 @@ namespace Meeting_Scheduler.Commands
 
             User u2 = repo.GetByUsername(addViewModel.Username);
 
-            if (u != null && u.RowKey != u1.RowKey) { MessageBox.Show($"A user with email {u.Email} already exists !"); return; }
+            if (u != null && u.RowKey != u1.RowKey) { logger.Log("Email already exists!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show($"A user with email {u.Email} already exists !"); return; }
 
-            if (u2 != null && u2.RowKey != u1.RowKey) { MessageBox.Show($"A user with username {u2.UserName} already exists !"); return; }
+            if (u2 != null && u2.RowKey != u1.RowKey) { logger.Log("Username already exists!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show($"A user with username {u2.UserName} already exists !"); return; }
 
             if (String.IsNullOrEmpty(addViewModel.Password))
             {
@@ -73,7 +74,9 @@ namespace Meeting_Scheduler.Commands
             }
 
             repo.UpdateUser(u1);
+            logger.Log("User successfully updated!", System.Diagnostics.EventLogEntryType.Information);
 
+            logger.Log("Navigating to the employee view!", System.Diagnostics.EventLogEntryType.Information);
             navigationService.CreateViewModel(() => { return new EmployeeViewModel(navigationService, u1.UserName); });
             navigationService.Navigate();
 

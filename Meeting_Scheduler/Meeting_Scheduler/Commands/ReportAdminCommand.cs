@@ -1,4 +1,6 @@
-﻿using Meeting_Scheduler.Database.Repositories;
+﻿using log4net.Repository.Hierarchy;
+using Meeting_Scheduler.Common;
+using Meeting_Scheduler.Database.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,9 +17,13 @@ namespace Meeting_Scheduler.Commands
         SpecialEventRepository specialEventRepository = new SpecialEventRepository();
         SeekingLeaveRepository seekingLeaveRepository = new SeekingLeaveRepository();
         AbsenceRepository absenceRepository = new AbsenceRepository();
+        private ILogger logger = new EventViewLogger();
 
+        
         public override void Execute(object parameter)
         {
+            logger.Log("Admin report generation starting...", System.Diagnostics.EventLogEntryType.Information);
+
             int appCnt = ap.GetHosts().Count;
             int evenCnt = specialEventRepository.GetEventsNumber();
             int seekCnt = seekingLeaveRepository.TotalApprovedSeekNumber();
@@ -42,6 +48,7 @@ namespace Meeting_Scheduler.Commands
             
             }
 
+            logger.Log("Admin report generation was successfully done!", System.Diagnostics.EventLogEntryType.Information);
             MessageBox.Show("Report is exported to .csv file !");
 
 

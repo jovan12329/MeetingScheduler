@@ -17,7 +17,8 @@
             <Grid.RowDefinitions>
 
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="9*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
 
 
@@ -75,10 +76,16 @@
                         HorizontalAlignment="Center"
                         Content="Change or Remove employees"/>
 
-            
-            
-            
-            
+
+            <Button 
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                 Command="{Binding AdminCalendarNav}"
+                 Margin="40 10 40 10"
+                Width="100"
+                Content="Calendar"/>
+
+
             <Button 
                     Command="{Binding LogOutUser}"
                     Margin="650 10 40 10" Content="Log Out"/>
@@ -86,11 +93,11 @@
 
             <Button 
                 Command="{Binding ReportAdmin}"
-            Margin="10 10 650 10" Content="Report"/>
+                Margin="10 10 650 10" Content="Report"/>
 
 
             <ListView
-                    Margin="30 0 30 60"
+                    Margin="30 0 30 20"
                     Grid.Row="1"
                     ItemsSource="{Binding Users}"
                     >

@@ -22,6 +22,7 @@ namespace Meeting_Scheduler.Commands
         private readonly NavigationUtility navigationService;
         private UserRepository repo = new UserRepository();
         private string user;
+        private ILogger logger = new EventViewLogger();
         public AddUserCommand(AddUserViewModel loginViewModel, NavigationUtility ns, string user)
         {
 
@@ -35,25 +36,29 @@ namespace Meeting_Scheduler.Commands
         public override void Execute(object parameter)
         {
 
-            if (String.IsNullOrEmpty(addViewModel.Username)) { MessageBox.Show("Username is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Password)) { MessageBox.Show("Password is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Name)) { MessageBox.Show("Name is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Surname)) { MessageBox.Show("Surname is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Email)) { MessageBox.Show("Email is empty!"); return; }
-            if (String.IsNullOrEmpty(addViewModel.Phone)) { MessageBox.Show("Phone is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Username)) { logger.Log("Empty field username entered!",System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Username is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Password)) { logger.Log("Empty field password entered!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Password is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Name)) { logger.Log("Empty field name entered!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Name is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Surname)) { logger.Log("Empty field surname entered!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Surname is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Email)) { logger.Log("Empty field email entered!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Email is empty!"); return; }
+            if (String.IsNullOrEmpty(addViewModel.Phone)) { logger.Log("Empty field phone entered!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show("Phone is empty!"); return; }
 
 
             User u = repo.GetUserByEmail(addViewModel.Email);
             User u1 = repo.GetByUsername(addViewModel.Username);
 
-            if (u != null) { MessageBox.Show($"A user with email {u.Email} already exists"); return; }
-            if (u1 != null) { MessageBox.Show($"A user with username {u.UserName} already exists"); return; }
+            if (u != null) { logger.Log("User with email exists!!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show($"A user with email {u.Email} already exists"); return; }
+            if (u1 != null) { logger.Log("User with username exists!!", System.Diagnostics.EventLogEntryType.Warning); MessageBox.Show($"A user with username {u.UserName} already exists"); return; }
 
             string password = HashPassword.Hash(addViewModel.Password);
+            logger.Log("Password hashed successfully!", System.Diagnostics.EventLogEntryType.Information);
 
             u = new User(addViewModel.Username, password, addViewModel.Name, addViewModel.Surname, Role.EMPLOYEE, addViewModel.Email, addViewModel.Phone);
 
             repo.AddUser(u);
+            logger.Log("User added successfully!", System.Diagnostics.EventLogEntryType.Information);
+
+            logger.Log("Navigating to admin view model!", System.Diagnostics.EventLogEntryType.Information);
 
             navigationService.CreateViewModel(() => { return new AdminViewModel(navigationService, user); });
             navigationService.Navigate();

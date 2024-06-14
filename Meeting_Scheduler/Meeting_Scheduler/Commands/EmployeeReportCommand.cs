@@ -1,4 +1,6 @@
-﻿using Meeting_Scheduler.Database.Repositories;
+﻿using log4net.Core;
+using Meeting_Scheduler.Common;
+using Meeting_Scheduler.Database.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +18,7 @@ namespace Meeting_Scheduler.Commands
         SpecialEventRepository specialEventRepository = new SpecialEventRepository();
         SeekingLeaveRepository seekingLeaveRepository = new SeekingLeaveRepository();
         AbsenceRepository absenceRepository = new AbsenceRepository();
+        private Common.ILogger logger = new FileLogger(typeof(EmployeeReportCommand));
         public EmployeeReportCommand(string user)
         {
             this.user=user;
@@ -27,6 +30,8 @@ namespace Meeting_Scheduler.Commands
             int evenCnt = specialEventRepository.GetEventsNumber();
             int seekCnt = seekingLeaveRepository.GetByRequestNum(user);
             int absCnt = absenceRepository.GetMyAbsencsApproved(user);
+
+            logger.Log("Starting report generation for employee !", System.Diagnostics.EventLogEntryType.Information);
 
             StringBuilder sb = new StringBuilder();
 
@@ -46,6 +51,7 @@ namespace Meeting_Scheduler.Commands
 
 
             }
+            logger.Log("Report generation was successfully done !", System.Diagnostics.EventLogEntryType.Information);
 
             MessageBox.Show("Report is exported to .csv file !");
 

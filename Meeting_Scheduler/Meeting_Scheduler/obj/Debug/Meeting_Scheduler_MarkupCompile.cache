@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Jovan\Desktop\IspravljenaVerzija\Meeting_Scheduler\Meeting_Scheduler\App.xaml
-142109716554
+16216740099
 
-84-503616528
-171899241738
-MainWindow.xaml;Views\AbsenceView.xaml;Views\AddUserView.xaml;Views\AdminView.xaml;Views\AppointmentView.xaml;Views\ApproveAbsenceView.xaml;Views\ApproveSeekView.xaml;Views\ChangeUserView.xaml;Views\EditAppointmentView.xaml;Views\EmployeeView.xaml;Views\EventView.xaml;Views\LoginView.xaml;Views\SeekingLeaveView.xaml;Views\UpdateUserView.xaml;
+95844250107
+1945903136
+MainWindow.xaml;Views\AbsenceView.xaml;Views\AddUserView.xaml;Views\AdminCalendarView.xaml;Views\AdminView.xaml;Views\AppointmentView.xaml;Views\ApproveAbsenceView.xaml;Views\ApproveSeekView.xaml;Views\ChangeUserView.xaml;Views\EditAppointmentView.xaml;Views\EmployeeCalendarView.xaml;Views\EmployeeView.xaml;Views\EventView.xaml;Views\LoginView.xaml;Views\SeekingLeaveView.xaml;Views\UpdateUserView.xaml;
 
 False
 

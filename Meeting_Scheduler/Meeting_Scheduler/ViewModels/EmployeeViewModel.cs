@@ -43,6 +43,7 @@ namespace Meeting_Scheduler.ViewModels
             Absence = new AbsenceNavigationCommand(this._navigationService,this.username);
             NavSchedCommand = new ScheduleNavigationCommand(this._navigationService, this.username);
             ReportEmployee = new EmployeeReportCommand(this.username);
+            EmployeeCalendarNav = new EmployeeCalendarNavCommand(this._navigationService, this.username);
         }
 
 
@@ -53,6 +54,7 @@ namespace Meeting_Scheduler.ViewModels
         public ICommand NavSchedCommand { get; set; }
         public ICommand Absence { get; set; }
         public ICommand ReportEmployee { get; set; }
+        public ICommand EmployeeCalendarNav { get; set; }
        
 
         public IEnumerable<AppointmentItemViewModel> Appointments => _appointments;
